@@ -3,6 +3,7 @@
   <li>
     <input <% if task.completed %> checked <% end %> a id="checkbox<%task.id%>" type="checkbox">
     <label for="checkbox<%task.id%>"><%= link_to task.title, task_path(task) %> </label>
+    <%= link_to "🗑", task_path(task), data: {turbo_method: :delete, turbo_confirm: "Are you 100% sure?"}%>
   </li>
 <% end %>
 </ul>
