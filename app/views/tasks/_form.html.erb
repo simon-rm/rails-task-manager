@@ -1,9 +1,20 @@
+
 <%= form_with model: @task do |f|%>
-  <%= f.label :title %>
-  <%= f.text_field :title%>
-  <%= f.label :details %>
-  <%= f.text_field :details%>
-  <%= f.label :completed %>
-  <%= f.check_box :completed %>
-  <%= f.submit %>
+<div class="d-flex flex-column gap-4">
+  <div class="form-group">
+    <%= f.label :title %>
+    <%= f.text_field :title, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :details %>
+    <%= f.text_field :details, class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :completed %>
+    <%= f.check_box :completed, class: "form-check-input" %>
+  </div>
+  <div class="text-center">
+  <%= f.submit class: "btn btn-primary" %>
+  </div>
+  </div>
 <% end %>
